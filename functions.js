@@ -83,3 +83,100 @@ function outer() {
   return x;
 }
 console.log(outer());
+
+
+function bmiCalculator(weight, height) {
+
+    const bmi = weight / (height ** 2)
+
+    if (bmi < 18.5) {
+        console.log("underweight")
+    } else if (bmi > 18.5 && bmi < 24.9) {
+        console.log("normal weight")
+    } else {
+        console.log("overweight")
+    }
+}
+
+// const weight = parseInt(prompt("What is your weight?"))
+// const height = parseInt(prompt("What is your height?"))
+
+// console.log(10 % 5 == 0)
+// bmiCalculator(weight, height)
+
+//https://mathsisfun.com/leap-years.html
+// function isLeapYear(year) {
+//     if (year % 4 == 0) {
+//         if (year % 100 == 0) {
+//             if (year % 400 == 0) {
+//                 console.log("leap year")
+//             } else {
+//                 console.log("not leap year")
+//             }
+//         } else {
+//             console.log("leap year")
+//         }
+//     } else {
+//         console.log("not leap year")
+//     }
+// }
+
+// isLeapYear(2100)
+
+const arr = ["john", "mary", "cynthia"]
+
+
+function whoIsPaying(arr){
+    const n = arr.length
+
+    let who = Math.random() * n
+    
+    who = Math.floor(who)
+    return `${arr[who]} is going to pay.`
+}
+
+// console.log(whoIsPaying(arr))
+
+function dice(){
+    let num = Math.random() * 6
+
+    num = Math.floor(num) + 1
+    console.log(num)
+}
+
+dice()
+//DEFAULT PARAMETERS
+
+// function add5(x, y = 5) {
+//     return x + y
+// }
+
+// console.log(add5(3))
+
+
+// function greeting(name, type = "hello", ) {
+//     console.log(`${type} ${name}`)
+// }
+
+// greeting("Edison")
+
+// const bookings = []
+
+// // function createBooking(flightNum, numPassengers, price){
+
+// // }
+
+// const createBooking = (flightNum, numPassengers = 1, price = 199 * numPassengers) => {
+//     const booking = {
+//         flightNum: flightNum,
+//         numPassengers: numPassengers,
+//         price: price
+//     }
+//     console.log(booking)
+//     bookings.push(booking)
+//     console.log(bookings)
+//     console.log(`We now have ${bookings.length} bookings`)
+// }
+
+// createBooking("LH123")
+// createBooking("LH124", 3)
