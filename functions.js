@@ -180,3 +180,81 @@ dice()
 
 // createBooking("LH123")
 // createBooking("LH124", 3)
+
+
+// function mul5(x, y = 5, z = 7) {
+//     return x * y * z;
+// }
+
+// console.log(mul5(6, 7, 10))
+
+// function greeting(name="stranger"){
+//     console.log("Hello "+ name)
+// }
+
+// greeting("edison")
+
+// function concatenate(first, second="default"){
+//     return  first + " " + second
+// }
+// concatenate("Hello") // "Hello default"
+// concatenate("Hello", "world") // "Hello world"
+// concatenate("Hello", "world") // "Hello world"
+// console.log(concatenate()) // "Hello world"
+
+
+
+// OBJECTS
+// An object is a collection of properties and methods in key value pairs. Properties are like variables that
+// store data while methods are functions that perform actions
+
+// const car ={
+//     make:"Toyota",
+//     model:"Camry",
+//     year: 2020,
+//     started: false,
+//     kmCovered: 0,
+//     start: function (){
+//         this.started = true
+//     },
+//     move: function(dist){
+//         if(this.started == true){
+//             this.kmCovered += dist  //this.kmCovered = this.kmCovered + dist
+//         }else{
+//             console.log("Car not started")
+//         }
+//     },
+//     reverse: function (dist){
+//         if (this.started == true) {
+//             this.kmCovered = this.kmCovered -  dist
+//         } else {
+//             console.log("Car not started")
+//         }
+//     }
+// }
+
+// console.log(car)
+// car.start()
+// console.log(car)
+// car.move(5)
+// console.log(car)
+
+// const employee = {
+//     name: "John",
+//     title: "Sales manager",
+//     salary: 100000,
+//     annualSalary: function () {
+//         const annual = this.salary * 12
+//         return annual
+//     }
+// }
+
+// const result = employee.annualSalary()
+// console.log(result)
+
+const account ={
+    accountBalance: 1000000,
+
+    deposit: function(amt){}, 
+    withdraw: function(amt){}
+}
