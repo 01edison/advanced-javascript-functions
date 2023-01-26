@@ -252,9 +252,86 @@ dice()
 // const result = employee.annualSalary()
 // console.log(result)
 
-const account ={
+const account = {
+    name: "Jonathan",
+    pin: "1111",
     accountBalance: 1000000,
 
-    deposit: function(amt){}, 
-    withdraw: function(amt){}
+    deposit: function (name, pin, amt) {
+        if (this.pin == pin && this.name == name) {
+            this.accountBalance += amt // this.accountBalance  = this.accountBalance + amt
+            console.log(`Your new balance is ${this.accountBalance}`)
+        } else {
+            console.log("invalid details")
+        }
+
+    },
+    withdraw: function (name, pin, amt) {
+        if (this.name == name && this.pin == pin) {
+            if (this.accountBalance != 0 && amt <= this.accountBalance) {
+                this.accountBalance -= amt;
+                console.log(`You have withdrawn ${amt}`)
+                console.log(`Your new balance is ${this.accountBalance}`)
+            } else {
+                console.log("Insuffucient funds")
+            }
+        } else {
+            console.log("invalid details")
+        }
+
+    }
+}
+
+// account.deposit("Jonathan", "1111", 200000)
+
+const person = {
+    name: "Edison",
+    relatives: [
+        { name: "Ada", role: "mother" },
+        { name: "Edison", role: "father" },
+        { name: "Brian", role: "brother" },
+        { name: "Paula", role: "sister" }
+    ],
+    previousJobs: ["sales", "hr", "receptionist"],
+    age: 40,
+    job: "developer",
+    addRelative: function (nameVal, roleVal) {
+        const relative = {
+            name: nameVal,
+            role: roleVal
+        }
+        this.relatives.push(relative)
+    }
+}
+
+// console.log(person.previousJobs[2])
+
+// person.age = 50;
+// console.log(person)
+
+// person.relatives[2].role = "cousin"
+// console.log(person)
+
+// person.religion = "Christianity"
+// console.log(person)
+
+// delete person.name
+// console.log(person)
+// console.log(person)
+// person.addRelative("john", "cousin")
+// console.log(person)
+
+const movieLibrary = {
+    name: "",
+    address: "",
+    collection: [
+        { name: "Action", movies: [{ name: "Black panther", releaseYear: 2022 }, { name: "Thor", releaseYear: 2019 }] },
+        { name: "Series", movies: [{ name: "Euphoria", releaseYear: 2020 }, { name: "Prison Break", releaseYear: 2005 }] }
+    ],
+    addCollection: function (name) {
+
+    },
+    addMovie: function (name, releaseYear, collectionName) {
+
+    }
 }
