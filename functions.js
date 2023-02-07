@@ -1,34 +1,35 @@
-function isEven(num){
-    if(num %2 == 0){
-        console.log("Even")
-    }else{
-        console.log("odd")
-    }
+function isEven(num) {
+  if (num % 2 == 0) {
+    console.log("Even");
+  } else {
+    console.log("odd");
+  }
 }
 
+const characters = (str) => {
+  console.log(str.length);
+};
 
-const characters = (str)=>{console.log(str.length)}
+// characters("hello there. today is thursday");
 
-characters("hello there. today is thursday")
-
-function converter(str){
-    if(typeof num == "number"){
-        console.log(typeof num)
-    }else{
-        console.log(typeof num)
-        const converted = Number(num)
-        console.log(converted)
-        console.log(typeof converted)
-    }
+function converter(str) {
+  if (typeof num == "number") {
+    console.log(typeof num);
+  } else {
+    console.log(typeof num);
+    const converted = Number(num);
+    console.log(converted);
+    console.log(typeof converted);
+  }
 }
 
-function words(str){
-    const words_arr = str.split(" ")
-    console.log(words_arr)
-    console.log(`there are ${words_arr.length} words`)
+function words(str) {
+  const words_arr = str.split(" ");
+  console.log(words_arr);
+  console.log(`there are ${words_arr.length} words`);
 }
 
-words("the sun sets in the east")
+// words("the sun sets in the east");
 
 // SCOPE EXAMPLE 1
 // let x = 10; // global scope
@@ -82,20 +83,18 @@ function outer() {
   inner();
   return x;
 }
-console.log(outer());
-
+// console.log(outer());
 
 function bmiCalculator(weight, height) {
+  const bmi = weight / height ** 2;
 
-    const bmi = weight / (height ** 2)
-
-    if (bmi < 18.5) {
-        console.log("underweight")
-    } else if (bmi > 18.5 && bmi < 24.9) {
-        console.log("normal weight")
-    } else {
-        console.log("overweight")
-    }
+  if (bmi < 18.5) {
+    console.log("underweight");
+  } else if (bmi > 18.5 && bmi < 24.9) {
+    console.log("normal weight");
+  } else {
+    console.log("overweight");
+  }
 }
 
 // const weight = parseInt(prompt("What is your weight?"))
@@ -123,28 +122,27 @@ function bmiCalculator(weight, height) {
 
 // isLeapYear(2100)
 
-const arr = ["john", "mary", "cynthia"]
+const arr = ["john", "mary", "cynthia"];
 
+function whoIsPaying(arr) {
+  const n = arr.length;
 
-function whoIsPaying(arr){
-    const n = arr.length
+  let who = Math.random() * n;
 
-    let who = Math.random() * n
-    
-    who = Math.floor(who)
-    return `${arr[who]} is going to pay.`
+  who = Math.floor(who);
+  return `${arr[who]} is going to pay.`;
 }
 
 // console.log(whoIsPaying(arr))
 
-function dice(){
-    let num = Math.random() * 6
+function dice() {
+  let num = Math.random() * 6;
 
-    num = Math.floor(num) + 1
-    console.log(num)
+  num = Math.floor(num) + 1;
+  console.log(num);
 }
 
-dice()
+// dice();
 //DEFAULT PARAMETERS
 
 // function add5(x, y = 5) {
@@ -152,7 +150,6 @@ dice()
 // }
 
 // console.log(add5(3))
-
 
 // function greeting(name, type = "hello", ) {
 //     console.log(`${type} ${name}`)
@@ -181,7 +178,6 @@ dice()
 // createBooking("LH123")
 // createBooking("LH124", 3)
 
-
 // function mul5(x, y = 5, z = 7) {
 //     return x * y * z;
 // }
@@ -201,8 +197,6 @@ dice()
 // concatenate("Hello", "world") // "Hello world"
 // concatenate("Hello", "world") // "Hello world"
 // console.log(concatenate()) // "Hello world"
-
-
 
 // OBJECTS
 // An object is a collection of properties and methods in key value pairs. Properties are like variables that
@@ -253,56 +247,54 @@ dice()
 // console.log(result)
 
 const account = {
-    name: "Jonathan",
-    pin: "1111",
-    accountBalance: 1000000,
+  name: "Jonathan",
+  pin: "1111",
+  accountBalance: 1000000,
 
-    deposit: function (name, pin, amt) {
-        if (this.pin == pin && this.name == name) {
-            this.accountBalance += amt // this.accountBalance  = this.accountBalance + amt
-            console.log(`Your new balance is ${this.accountBalance}`)
-        } else {
-            console.log("invalid details")
-        }
-
-    },
-    withdraw: function (name, pin, amt) {
-        if (this.name == name && this.pin == pin) {
-            if (this.accountBalance != 0 && amt <= this.accountBalance) {
-                this.accountBalance -= amt;
-                console.log(`You have withdrawn ${amt}`)
-                console.log(`Your new balance is ${this.accountBalance}`)
-            } else {
-                console.log("Insuffucient funds")
-            }
-        } else {
-            console.log("invalid details")
-        }
-
+  deposit: function (name, pin, amt) {
+    if (this.pin == pin && this.name == name) {
+      this.accountBalance += amt; // this.accountBalance  = this.accountBalance + amt
+      console.log(`Your new balance is ${this.accountBalance}`);
+    } else {
+      console.log("invalid details");
     }
-}
+  },
+  withdraw: function (name, pin, amt) {
+    if (this.name == name && this.pin == pin) {
+      if (this.accountBalance != 0 && amt <= this.accountBalance) {
+        this.accountBalance -= amt;
+        console.log(`You have withdrawn ${amt}`);
+        console.log(`Your new balance is ${this.accountBalance}`);
+      } else {
+        console.log("Insuffucient funds");
+      }
+    } else {
+      console.log("invalid details");
+    }
+  },
+};
 
 // account.deposit("Jonathan", "1111", 200000)
 
 const person = {
-    name: "Edison",
-    relatives: [
-        { name: "Ada", role: "mother" },
-        { name: "Edison", role: "father" },
-        { name: "Brian", role: "brother" },
-        { name: "Paula", role: "sister" }
-    ],
-    previousJobs: ["sales", "hr", "receptionist"],
-    age: 40,
-    job: "developer",
-    addRelative: function (nameVal, roleVal) {
-        const relative = {
-            name: nameVal,
-            role: roleVal
-        }
-        this.relatives.push(relative)
-    }
-}
+  name: "Edison",
+  relatives: [
+    { name: "Ada", role: "mother" },
+    { name: "Edison", role: "father" },
+    { name: "Brian", role: "brother" },
+    { name: "Paula", role: "sister" },
+  ],
+  previousJobs: ["sales", "hr", "receptionist"],
+  age: 40,
+  job: "developer",
+  addRelative: function (nameVal, roleVal) {
+    const relative = {
+      name: nameVal,
+      role: roleVal,
+    };
+    this.relatives.push(relative);
+  },
+};
 
 // console.log(person.previousJobs[2])
 
@@ -322,16 +314,239 @@ const person = {
 // console.log(person)
 
 const movieLibrary = {
-    name: "",
-    address: "",
-    collection: [
-        { name: "Action", movies: [{ name: "Black panther", releaseYear: 2022 }, { name: "Thor", releaseYear: 2019 }] },
-        { name: "Series", movies: [{ name: "Euphoria", releaseYear: 2020 }, { name: "Prison Break", releaseYear: 2005 }] }
-    ],
-    addCollection: function (name) {
-
+  name: "",
+  address: "",
+  collection: [
+    {
+      name: "Action",
+      movies: [
+        { name: "Black panther", releaseYear: 2022 },
+        { name: "Thor", releaseYear: 2019 },
+      ],
     },
-    addMovie: function (name, releaseYear, collectionName) {
+    {
+      name: "Series",
+      movies: [
+        { name: "Euphoria", releaseYear: 2020 },
+        { name: "Prison Break", releaseYear: 2005 },
+      ],
+    },
+  ],
+  addCollection: function (name) {
+    const collection = {
+      name,
+      movies: [],
+    };
+    this.collection.push(collection);
+  },
+  addMovie: function (name, releaseYear, collectionName) {
+    // for (let i = 0; i < this.collection.length; i++) {
+    //   if (this.collection[i].name == collectionName) {
+    //     const movie = {
+    //       name,
+    //       releaseYear,
+    //     };
+    //     this.collection[i].movies.push(movie);
+    //   }
+    // }
+
+    const collection = this.collection.find(function (item) {
+      return item.name == collectionName;
+    });
+    collection.movies.push({ name, releaseYear });
+  },
+};
+
+movieLibrary.addCollection("Fiction");
+console.log(movieLibrary);
+movieLibrary.addMovie("Ant man", 2023, "Fiction");
+console.log(movieLibrary);
+
+movieLibrary.addMovie("tomb raider", 2020, "Action")
+movieLibrary.addMovie("tomb raider", 2020, "Action")
+// movieLibrary.addMovie("tomb raider", 2020, "Series")
+// movieLibrary.addMovie("tomb raider", 2020, "Horror")
+
+console.log(movieLibrary)
+
+// FOR LOOP RECAP
+
+const str1 = "Hello world";
+
+// for (let i = 0; i < str1.length; i++) {
+//     //code ..
+
+//     console.log(str1[i])
+// }
+// for (let i = 0; i <= 20; i++) {
+//     console.log(i)
+// }
+
+// const str2 = "javascriaaaaaaapt"
+// const letter = "a"
+// let count = 0;
+
+// for (let i = 0; i < str2.length; i++) {
+
+//     if (letter === str2[i]) {
+//         count++
+//     }
+// }
+// console.log(count)
+
+// let count = 0
+
+// for(let i = 1; i <= 10; i++){
+//     count += i // count = count + i
+// }
+
+// for(let i = 0; i <10; i++){
+//     console.log(i);
+// }
+
+// for (let i = 0; i <= 30; i++) {
+//     if (i % 2 == 0) {
+//         console.log(i)
+//     }
+// }
+
+// const fruits = [
+//     { name: "Apple", color: "yellow" },
+//     { name: "Orange", color: "orange" },
+//     { name: "Banana", color: "green" }
+// ]
+
+// for (let i = 0; i < fruits.length; i++) {
+//     // console.log(fruits[i].color)
+//     if (fruits[i].color === "red") {
+//         console.log("We found red")
+//     } else {
+//         console.log("This fruit is not red")
+//     }
+// }
+
+
+// const collections = [
+//     { name: "Action", movies: [{ name: "Black panther", releaseYear: 2022 }, { name: "Thor", releaseYear: 2019 }] },
+//     { name: "Series", movies: [{ name: "Euphoria", releaseYear: 2020 }, { name: "Prison Break", releaseYear: 2005 }] }
+// ]
+
+// const collection = collections.find(function (item) {
+//     return item.name == "Action"
+// })
+// console.log(collection)
+
+// const nums = [2, 4, 6, 7]
+
+// const doubled = nums.map((item) => {
+//     return item * 2
+// })
+
+// console.log(doubled)
+
+// const lessThan5 = nums.filter((item) => {
+//     return item < 5
+// })
+
+// console.log(lessThan5)
+
+//OOP (Object Oriented Programming)
+// const person = {
+//     name: "John",
+//     age: 30,
+//     gender: "male"
+// }
+// const mary = {
+
+// }
+
+class Person {
+    constructor(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender
+    }
+
+    introduceYourself() {
+        return `Hello my name is ${this.name}. I am ${this.age} years old. I am a ${this.gender}`
+    }
+}
+
+const john = new Person("John", 30, "Male")
+// const mary = new Person("Mary", 22, "Female")
+// console.log(john)
+// console.log(john.introduceYourself())
+// console.log(mary)
+// console.log(mary.introduceYourself())
+
+// console.log(john.introduceYourself())
+// console.log(mary.introduceYourself())
+
+class Car {
+    constructor(make, year) {
+        this.make = make;
+        this.year = year;
+        this.started = false;
+        this.kmCovered = 0;
+        this.speed = 0
+    }
+
+    displayInfo() {
+        return `Make: ${this.make}, Year: ${this.year}`
+    }
+
+    start() {
+        this.started = true;
+    }
+
+    accelerate() {
+        this.speed += 10
+        console.log(`${this.make} going at ${this.speed} km/h`)
+    }
+
+    brake() {
+        this.speed -= 5
+        console.log(`${this.make} going at ${this.speed} km/h`)
+    }
+}
+
+const car1 = new Car("Toyota", 2020)
+// console.log(car1)
+
+// car1.accelerate() //Toyota going at 10km/h
+// car1.accelerate() //Toyota going at 20km/h
+// car1.brake() //Toyota going at 15km/h
+
+
+
+// console.log(car1.displayInfo())
+// const car2 = new Car("Mercedes", 2005)
+// console.log(car2)
+// console.log(car2.displayInfo())
+
+class BankAccount {
+    constructor(name, balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    deposit(amount) {
+        this.balance += amount;
+        return `${this.name} deposited $${amount}. Current Balance: $${this.balance}`
+    }
+    withdraw(amount){
+
+    }
+
+    transfer(amount, account){
 
     }
 }
+
+const jonathan = new BankAccount("Jonathan", 4000)
+console.log(jonathan.deposit(3000))
+console.log(jonathan.deposit(3000))
+
+const mary = new BankAccount("Mary", 5000)
+
+jonathan.transfer(2000, mary) //Jonathan transferred $2000 to Mary. Jonathan's current balance: $8000. Mary's current balance: $7000
