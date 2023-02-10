@@ -525,28 +525,103 @@ const car1 = new Car("Toyota", 2020)
 // console.log(car2.displayInfo())
 
 class BankAccount {
-    constructor(name, balance) {
-        this.name = name;
-        this.balance = balance;
-    }
+  constructor(name, balance) {
+      this.name = name;
+      this.balance = balance;
+  }
 
-    deposit(amount) {
-        this.balance += amount;
-        return `${this.name} deposited $${amount}. Current Balance: $${this.balance}`
-    }
-    withdraw(amount){
+  deposit(amount) {
+      this.balance += amount;
+      return `${this.name} deposited $${amount}. Current Balance: $${this.balance}`
+  }
+  withdraw(amount) {
+      this.balance -= amount;
+      return `${this.name} withdrew $${amount}. Current Balance: $${this.balance} `
+  }
 
-    }
-
-    transfer(amount, account){
-
-    }
+  transfer(amount, accountName) {
+      this.balance -= amount;
+      accountName.balance += amount
+  }
 }
 
-const jonathan = new BankAccount("Jonathan", 4000)
-console.log(jonathan.deposit(3000))
-console.log(jonathan.deposit(3000))
+// const jonathan = new BankAccount("Jonathan", 4000)
+// console.log(jonathan.deposit(3000))
+// console.log(jonathan.deposit(3000))
 
 const mary = new BankAccount("Mary", 5000)
+const joseph = new BankAccount("Joseph", 4000)
+// console.log(joseph)
+// jonathan.transfer(2000, mary) //Jonathan transferred $2000 to Mary. Jonathan's current balance: $8000. Mary's current balance: $7000
+// jonathan.transfer(4000, joseph)
+// // console.log(jonathan)
+// // console.log(mary)
+// // console.log(joseph)
 
-jonathan.transfer(2000, mary) //Jonathan transferred $2000 to Mary. Jonathan's current balance: $8000. Mary's current balance: $7000
+// mary.transfer(3000, jonathan)
+
+
+//INHERITANCE
+
+class Parent {
+  constructor(name, age) {
+      this.name = name;
+      this.age = age;
+  }
+
+  sayName() {
+      return `My name is ${this.name}`
+  }
+
+  sayAge() {
+      return `I am ${this.age} years old.`
+  }
+}
+
+const parent1 = new Parent("Austin", 35)
+
+// console.log(parent1)
+console.log(parent1.sayName())
+
+class Child extends Parent {
+  constructor(name, age, friends) {
+      super(name, age)
+      this.friends = friends
+  }
+
+  listFriends() {
+      this.friends.forEach(function (item) {
+          console.log(item)
+      })
+  }
+
+  sayName(){
+      return `${super.sayName()}. I have ${this.friends.length} friends`
+  }
+}
+
+const child = new Child("Feyi", 13, ["titi", "mary", "idowu"])
+
+console.log(child.sayName())
+// child.listFriends()
+
+
+class ElectricCar extends Car{
+  constructor(make, year, batteryLvl, model){
+      super(make, year)
+      this.batteryLvl = batteryLvl;
+      this.model = model
+  }
+
+  charge(){
+      this.batteryLvl += 8;
+      return `Battery charged to ${this.batteryLvl}`
+  }
+
+  accelerate(){
+
+  }
+}
+
+const electricCar1 = new ElectricCar("Tesla", 2020, 70, "Model X")
+console.log(electricCar1.accelerate()) //Tesla going at 10km/h and battery level at 65%
