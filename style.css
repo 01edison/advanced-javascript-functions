@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  padding: 5rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+p {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+select {
+  font-size: 1.5rem;
+}
+
+button {
+  padding: 1rem;
+  cursor: pointer;
+}

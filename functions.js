@@ -362,12 +362,12 @@ console.log(movieLibrary);
 movieLibrary.addMovie("Ant man", 2023, "Fiction");
 console.log(movieLibrary);
 
-movieLibrary.addMovie("tomb raider", 2020, "Action")
-movieLibrary.addMovie("tomb raider", 2020, "Action")
+movieLibrary.addMovie("tomb raider", 2020, "Action");
+movieLibrary.addMovie("tomb raider", 2020, "Action");
 // movieLibrary.addMovie("tomb raider", 2020, "Series")
 // movieLibrary.addMovie("tomb raider", 2020, "Horror")
 
-console.log(movieLibrary)
+console.log(movieLibrary);
 
 // FOR LOOP RECAP
 
@@ -425,7 +425,6 @@ const str1 = "Hello world";
 //     }
 // }
 
-
 // const collections = [
 //     { name: "Action", movies: [{ name: "Black panther", releaseYear: 2022 }, { name: "Thor", releaseYear: 2019 }] },
 //     { name: "Series", movies: [{ name: "Euphoria", releaseYear: 2020 }, { name: "Prison Break", releaseYear: 2005 }] }
@@ -461,18 +460,18 @@ const str1 = "Hello world";
 // }
 
 class Person {
-    constructor(name, age, gender) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender
-    }
+  constructor(name, age, gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
 
-    introduceYourself() {
-        return `Hello my name is ${this.name}. I am ${this.age} years old. I am a ${this.gender}`
-    }
+  introduceYourself() {
+    return `Hello my name is ${this.name}. I am ${this.age} years old. I am a ${this.gender}`;
+  }
 }
 
-const john = new Person("John", 30, "Male")
+const john = new Person("John", 30, "Male");
 // const mary = new Person("Mary", 22, "Female")
 // console.log(john)
 // console.log(john.introduceYourself())
@@ -483,41 +482,39 @@ const john = new Person("John", 30, "Male")
 // console.log(mary.introduceYourself())
 
 class Car {
-    constructor(make, year) {
-        this.make = make;
-        this.year = year;
-        this.started = false;
-        this.kmCovered = 0;
-        this.speed = 0
-    }
+  constructor(make, year) {
+    this.make = make;
+    this.year = year;
+    this.started = false;
+    this.kmCovered = 0;
+    this.speed = 0;
+  }
 
-    displayInfo() {
-        return `Make: ${this.make}, Year: ${this.year}`
-    }
+  displayInfo() {
+    return `Make: ${this.make}, Year: ${this.year}`;
+  }
 
-    start() {
-        this.started = true;
-    }
+  start() {
+    this.started = true;
+  }
 
-    accelerate() {
-        this.speed += 10
-        console.log(`${this.make} going at ${this.speed} km/h`)
-    }
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} going at ${this.speed} km/h`);
+  }
 
-    brake() {
-        this.speed -= 5
-        console.log(`${this.make} going at ${this.speed} km/h`)
-    }
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} going at ${this.speed} km/h`);
+  }
 }
 
-const car1 = new Car("Toyota", 2020)
+const car1 = new Car("Toyota", 2020);
 // console.log(car1)
 
 // car1.accelerate() //Toyota going at 10km/h
 // car1.accelerate() //Toyota going at 20km/h
 // car1.brake() //Toyota going at 15km/h
-
-
 
 // console.log(car1.displayInfo())
 // const car2 = new Car("Mercedes", 2005)
@@ -526,22 +523,22 @@ const car1 = new Car("Toyota", 2020)
 
 class BankAccount {
   constructor(name, balance) {
-      this.name = name;
-      this.balance = balance;
+    this.name = name;
+    this.balance = balance;
   }
 
   deposit(amount) {
-      this.balance += amount;
-      return `${this.name} deposited $${amount}. Current Balance: $${this.balance}`
+    this.balance += amount;
+    return `${this.name} deposited $${amount}. Current Balance: $${this.balance}`;
   }
   withdraw(amount) {
-      this.balance -= amount;
-      return `${this.name} withdrew $${amount}. Current Balance: $${this.balance} `
+    this.balance -= amount;
+    return `${this.name} withdrew $${amount}. Current Balance: $${this.balance} `;
   }
 
   transfer(amount, accountName) {
-      this.balance -= amount;
-      accountName.balance += amount
+    this.balance -= amount;
+    accountName.balance += amount;
   }
 }
 
@@ -549,8 +546,8 @@ class BankAccount {
 // console.log(jonathan.deposit(3000))
 // console.log(jonathan.deposit(3000))
 
-const mary = new BankAccount("Mary", 5000)
-const joseph = new BankAccount("Joseph", 4000)
+const mary = new BankAccount("Mary", 5000);
+const joseph = new BankAccount("Joseph", 4000);
 // console.log(joseph)
 // jonathan.transfer(2000, mary) //Jonathan transferred $2000 to Mary. Jonathan's current balance: $8000. Mary's current balance: $7000
 // jonathan.transfer(4000, joseph)
@@ -560,68 +557,140 @@ const joseph = new BankAccount("Joseph", 4000)
 
 // mary.transfer(3000, jonathan)
 
-
 //INHERITANCE
 
 class Parent {
   constructor(name, age) {
-      this.name = name;
-      this.age = age;
+    this.name = name;
+    this.age = age;
   }
 
   sayName() {
-      return `My name is ${this.name}`
+    return `My name is ${this.name}`;
   }
 
   sayAge() {
-      return `I am ${this.age} years old.`
+    return `I am ${this.age} years old.`;
   }
 }
 
-const parent1 = new Parent("Austin", 35)
+const parent1 = new Parent("Austin", 35);
 
 // console.log(parent1)
-console.log(parent1.sayName())
+console.log(parent1.sayName());
 
 class Child extends Parent {
   constructor(name, age, friends) {
-      super(name, age)
-      this.friends = friends
+    super(name, age);
+    this.friends = friends;
   }
 
   listFriends() {
-      this.friends.forEach(function (item) {
-          console.log(item)
-      })
+    this.friends.forEach(function (item) {
+      console.log(item);
+    });
   }
 
-  sayName(){
-      return `${super.sayName()}. I have ${this.friends.length} friends`
+  sayName() {
+    return `${super.sayName()}. I have ${this.friends.length} friends`;
   }
 }
 
-const child = new Child("Feyi", 13, ["titi", "mary", "idowu"])
+const child = new Child("Feyi", 13, ["titi", "mary", "idowu"]);
 
-console.log(child.sayName())
+console.log(child.sayName());
 // child.listFriends()
 
-
-class ElectricCar extends Car{
-  constructor(make, year, batteryLvl, model){
-      super(make, year)
-      this.batteryLvl = batteryLvl;
-      this.model = model
+class ElectricCar extends Car {
+  constructor(make, year, batteryLvl, model) {
+    super(make, year);
+    this.batteryLvl = batteryLvl;
+    this.model = model;
   }
 
-  charge(){
-      this.batteryLvl += 8;
-      return `Battery charged to ${this.batteryLvl}`
+  charge() {
+    this.batteryLvl += 8;
+    return `Battery charged to ${this.batteryLvl}`;
   }
 
-  accelerate(){
-
-  }
+  accelerate() {}
 }
 
-const electricCar1 = new ElectricCar("Tesla", 2020, 70, "Model X")
-console.log(electricCar1.accelerate()) //Tesla going at 10km/h and battery level at 65%
+const electricCar1 = new ElectricCar("Tesla", 2020, 70, "Model X");
+console.log(electricCar1.accelerate()); //Tesla going at 10km/h and battery level at 65%
+//ASYNCHRONOUS JAVASCRIPT
+
+// const p = document.querySelector("p");
+// p.textContent = "Today is tuesday";
+// alert("Text is set")
+
+// p.style.color = "red"
+
+// setTimeout(() => {
+//   p.textContent = "My name is Edison";
+// }, 5000);
+
+// p.style.color = "red";
+
+//AJAX (Asynchronous Javascript and XML)
+
+//STRUCTURE OF AN API
+//https://api.example.com/v1/users/?page=2
+
+//https://api.example.com => BASE URL
+
+//  /v1/users/ => ENDPOINT
+
+// /?page=2  => QUERY
+
+// https://www.boredapi.com/api/activity/
+
+fetch("https://www.boredapi.com/api/activity/")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  });
+
+// fetch("http://www.boredapi.com/api/activity?type=recreational&participants=4")
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (data) {
+//     console.log(data);
+//   });
+
+function getTask(type, numParticipants = 1) {
+  fetch(
+    `http://www.boredapi.com/api/activity?type=${type}&participants=${numParticipants}`
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
+}
+
+getTask("cooking", 2);
+
+let type, numParticipants;
+
+document.querySelector("select").addEventListener("change", (e) => {
+  // console.log(e.target.value);
+  type = e.target.value;
+});
+
+document.querySelector("form").addEventListener("change", (e) => {
+  // console.log(e.target.value);
+  numParticipants = e.target.value;
+});
+
+document.querySelector("button").addEventListener("click", () => {
+  if (type == undefined || numParticipants == undefined) {
+    console.log("Please select values");
+  } else {
+    getTask(type, numParticipants);
+  }
+});

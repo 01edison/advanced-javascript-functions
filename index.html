@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Asynchronous JavaScript</title>
+  </head>
+  <body>
+    <h1>Bored? Generate a task!</h1>
+    <main>
+      <div>
+        <p>Type of Activity</p>
+        <select name="" id="">
+          <option>Select a Type</option>
+          <option>diy</option>
+          <option>recreational</option>
+          <option>cooking</option>
+          <option>relaxation</option>
+          <option>music</option>
+          <option>busywork</option>
+          <option>education</option>
+        </select>
+      </div>
 
-    <script src="./functions.js"></script>
-</body>
+      <div>
+        <p>Number of participants</p>
+        <form action="">
+          <label for="">
+            <input name="participants" value="1" type="radio" />
+            1
+          </label>
+          <label for="">
+            <input name="participants" value="2" type="radio" />
+            2
+          </label>
+          <label for="">
+            <input name="participants" value="3" type="radio" />
+            3
+          </label>
+          <label for="">
+            <input name="participants" value="4" type="radio" />
+            4
+          </label>
+        </form>
+      </div>
+    </main>
+
+    <button>Generate a task for me</button>
+
+    <script src="./lecture.js"></script>
+  </body>
 </html>
