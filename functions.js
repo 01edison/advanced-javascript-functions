@@ -207,20 +207,21 @@ function dice() {
 //     model:"Camry",
 //     year: 2020,
 //     started: false,
-//     kmCovered: 0,
+//     speed: 0,
+//     distCovered:0,
 //     start: function (){
 //         this.started = true
 //     },
 //     move: function(dist){
 //         if(this.started == true){
-//             this.kmCovered += dist  //this.kmCovered = this.kmCovered + dist
+//             this.speed += dist  //this.speed = this.speed + dist
 //         }else{
 //             console.log("Car not started")
 //         }
 //     },
 //     reverse: function (dist){
 //         if (this.started == true) {
-//             this.kmCovered = this.kmCovered -  dist
+//             this.speed = this.speed -  dist
 //         } else {
 //             console.log("Car not started")
 //         }
@@ -316,7 +317,7 @@ const person = {
 const movieLibrary = {
   name: "",
   address: "",
-  collection: [
+  collections: [
     {
       name: "Action",
       movies: [
