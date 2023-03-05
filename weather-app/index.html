@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+  </head>
+  <body>
+    <main class="main">
+      <form class="search_form">
+        <input type="text" placeholder="Type in a state" class="search_box" />
+        <button type="submit">Search</button>
+      </form>
+      <div class="app_container">
+        <div class="app">
+          <div class="left_side">
+            <h1 class="temp_value">?&deg;C</h1>
+            <div class="temp_desc_container">
+              <img
+                src="http://openweathermap.org/img/wn/02d@2x.png"
+                class="temp_image weather-img"
+              />
+              <p class="temp_desc">??</p>
+            </div>
+            <hr />
+            <h3 class="details">State Name: <span class="state">?</span></h3>
+            <h3 class="details">Wind speed: <span class="speed">?</span> mph</h3>
+          </div>
+          <img
+            src="http://openweathermap.org/img/wn/02d@2x.png"
+            class="main_image weather-img"
+          />
+        </div>
+      </div>
+    </main>
+    <script src="./weather.js"></script>
+  </body>
+</html>
